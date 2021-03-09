@@ -1,0 +1,75 @@
+<form [hidden]="formval1">
+
+  <b>Personal Details</b>
+
+<div>
+  <input type="text" placeholder="Enter Your Name" [(ngModel)]="name" name="name" required>
+</div>
+
+<br>
+
+<div>
+  <input type="text" placeholder="Enter Your Email" [(ngModel)]="email" name="email" required>
+</div>
+
+<br>
+
+<div>
+  <input type="password" placeholder="Enter Your password" [(ngModel)]="password" name="password" required>
+</div>
+
+<br>
+
+<div *ngIf="name != '' && email != '' && password != ''  ">
+  <input (click)="form1()" type="button" value="Continue">
+</div>
+
+</form>
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+<form [hidden]="formval2">
+
+  <b>How old are you</b>
+
+<div>
+  <input type="date" placeholder="Enter Your Name" [(ngModel)]="dob" name="dob">
+</div>
+
+<br>
+
+<div *ngIf ="dob != undefined ">
+  <input (click)="form2()" type="button" value="Continue">
+</div>
+
+<div>
+  <input (click)="formBack2()" type="button" value="Back">
+</div>
+
+</form>
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+
+<form [hidden]="formval3">
+
+  <b>This will help others to identify you</b>
+
+<div>
+  <input type="file" [(ngModel)]="pic" name="pic"  > 
+</div>
+
+<br>
+
+<div *ngIf="pic != undefined">
+  <input (click)="submit()" type="button" value="Submit">
+</div>
+
+<div>
+  <input (click)="formBack3()" type="button" value="Back">
+</div>
+
+</form>
